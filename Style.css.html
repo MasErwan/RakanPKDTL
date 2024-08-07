@@ -1,0 +1,117 @@
+/* Basic Reset */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures space between logo and nav */
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+
+.logo img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+nav {
+    margin-left: auto; /* Optional: pushes the nav to the right */
+}
+
+.nav-menu {
+    display: flex; /* Makes the list items align side by side */
+    gap: 1rem; /* Adds space between items */
+}
+
+.nav-menu li {
+    display: inline; /* Ensures list items are inline */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333; /* Adjust text color as needed */
+    padding: 0.5rem 1rem;
+}
+
+.nav-menu a:hover {
+    background-color: #ddd; /* Adds a background on hover */
+    border-radius: 4px; /* Optional: adds rounded corners */
+}
+
+#staff-login {
+    padding: 1rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.staff-login-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-link-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative; /* Ensure icon visibility */
+}
+
+.icon-toggle-off,
+.icon-toggle-on {
+    display: none;
+}
+
+.nav-link-icon:hover .icon-toggle-off {
+    display: inline;
+}
+
+.nav-link-icon.nav-link-icon-toggle[aria-expanded="true"] .icon-toggle-off {
+    display: none;
+}
+
+.nav-link-icon.nav-link-icon-toggle[aria-expanded="false"] .icon-toggle-on {
+    display: inline;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    flex-direction: row; /* Ensure items are in a row */
+    padding-top: 20px; /* Add padding to space out from header */
+    min-height: 100vh; /* Ensures the container can expand beyond the viewport height */
+    box-sizing: border-box; /* Ensure padding and border are included in the height */
+}
+
+.autoslide {
+    text-align: center;
+    width: 900px; /* Adjust width as needed */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px; /* Space between autoslide and drawing area */
+    position: relative; /* Position for next/prev buttons */
+}
+
+.drawing-area {
+    flex: 1;
+    background-color: #fff;
+    border: 10px solid #ccc;
+    cursor: crosshair;
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 500px; /* Optional: ensures minimum height */
+    text-align: center; /* Center text horizontally */
+    padding: 20px; /* Add padding for spacing */
+}
