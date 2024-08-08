@@ -270,71 +270,50 @@
             <img src="https://maserwan.github.io/RakanPKDTL/Logo/Celik.png" alt="Slide 2" onclick="window.open('https://www.celikkomuniti.my/', '_blank')">
             <img src="https://maserwan.github.io/RakanPKDTL/Logo/KKM.png" alt="Slide 3" onclick="window.open('https://maserwan.github.io/RakanPKDTL/KKM/', '_blank')">
             <img src="https://maserwan.github.io/RakanPKDTL/Logo/MEDIK.png" alt="Slide 4" onclick="window.open('https://maserwan.github.io/RakanPKDTL/MEDIK/', '_blank')">
-            <img src="https://maserwan.github.io/RakanPKDTL/Logo/KKM.jfif" alt="Slide 5" onclick="window.open('https://www.moh.gov.my/', '_blank')">
             <button class="prev" onclick="prevSlide()">&#10094;</button>
             <button class="next" onclick="nextSlide()">&#10095;</button>
         </div>
         <div class="drawing-area">
-            <h1>Interactive Drawing Area</h1>
-            <p class="subheading">Draw something in this area!</p>
-        </div>
-        <div class="ihp-breakdown__content-promo">
-            <div class="ihp-breakdown__content-promo-cta">
-                <a class="promo-cta" href="https://maserwan.github.io/RakanPKDTL/CADANGAN/">
-                    <img src="https://maserwan.github.io/RakanPKDTL/Logo/Feedback.png" alt="Feedback">
-                </a>
-                <a class="util-button util-button--alt-on-dark" href="https://maserwan.github.io/RakanPKDTL/CADANGAN/">Cadangan &amp; Aduan</a>
-            </div>
-        </div>
-        <div class="ihp-breakdown__grid">
-            <div class="ihp-breakdown__grid-intro">
-                <p>Untuk maklumat lanjut, sila klik pautan di bawah:</p>
-            </div>
-            <ul class="ihp-breakdown__grid-cards">
-                <li class="ihp-breakdown__grid-cards-item">
-                    <a href="https://maserwan.github.io/RakanPKDTL/CELIKKOM/">
-                        <img src="https://maserwan.github.io/RakanPKDTL/Logo/Celik.png" alt="CelikKom" class="link-card-icon">
-                        <h4>CelikKom</h4>
-                    </a>
-                </li>
-                <li class="ihp-breakdown__grid-cards-item">
-                    <a href="https://maserwan.github.io/RakanPKDTL/MEDIK/">
-                        <img src="https://maserwan.github.io/RakanPKDTL/Logo/MEDIK.png" alt="MEDIK" class="link-card-icon">
-                        <h4>MEDIK</h4>
-                    </a>
-                </li>
-                <li class="ihp-breakdown__grid-cards-item">
-                    <a href="https://maserwan.github.io/RakanPKDTL/KKM/">
-                        <img src="https://maserwan.github.io/RakanPKDTL/Logo/KKM.png" alt="KKM" class="link-card-icon">
-                        <h4>KKM</h4>
-                    </a>
-                </li>
-            </ul>
+            <h1>Pertandingan Mencipta Banner</h1>
+            <h2 class="subheading">Tarikh tutup: 31 Disember 2024</h2>
+            <h3 class="subheading">Email hasil ciptaan anda ke: pertandingan@pkdtl.gov.my</h3>
         </div>
     </div>
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll("#autoslide img");
+        // Autoslide functionality
+        let slideIndex = 0;
+        let slides = document.querySelectorAll("#autoslide img");
+        let intervalId;
 
-        function showSlide(index) {
+        const showSlide = (index) => {
             slides.forEach((slide, i) => {
                 slide.style.display = i === index ? "block" : "none";
             });
-        }
+        };
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
+        const nextSlide = () => {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        };
 
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
+        const prevSlide = () => {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+        };
 
-        setInterval(nextSlide, 3000);
+        const startAutoSlide = () => {
+            intervalId = setInterval(nextSlide, 3000);
+        };
 
-        showSlide(currentSlide);
+        const stopAutoSlide = () => {
+            clearInterval(intervalId);
+        };
+
+        document.querySelector(".autoslide").addEventListener("mouseover", stopAutoSlide);
+        document.querySelector(".autoslide").addEventListener("mouseout", startAutoSlide);
+
+        showSlide(slideIndex);
+        startAutoSlide();
     </script>
 </body>
 </html>
