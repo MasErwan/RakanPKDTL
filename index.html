@@ -21,33 +21,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
         .header-left {
             display: flex;
             align-items: center;
-            flex: 1;
-            min-width: 200px;
         }
         .header-left img {
             max-width: 80px;
             margin-right: 10px;
         }
-        .header-left div {
-            display: flex;
-            flex-direction: column;
-        }
         .header-center {
             text-align: center;
             flex: 1;
-            min-width: 200px;
         }
         .header-right {
             display: flex;
             align-items: center;
-            flex: 1;
-            justify-content: flex-end;
-            min-width: 200px;
         }
         .navigation {
             background-color: #fff;
@@ -57,16 +46,18 @@
             justify-content: center;
             align-items: center;
         }
+        .navigation h2 {
+            margin: 0;
+            margin-right: 10px;
+        }
         .navigation ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
         }
         .navigation li {
-            margin: 5px;
+            margin-left: 10px;
         }
         .navigation a {
             text-decoration: none;
@@ -80,14 +71,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding-top: 20px;
             min-height: 100vh;
             box-sizing: border-box;
         }
         .autoslide {
             text-align: center;
-            width: 100%;
-            max-width: 900px;
+            width: 900px;
             background-color: #fff;
             border: 1px solid #ccc;
             padding: 20px;
@@ -97,8 +87,8 @@
         }
         .autoslide img {
             max-width: 100%;
-            width: 100%;
-            height: auto;
+            width: 900px;
+            height: 500px;
             object-fit: cover;
             display: none;
             cursor: pointer;
@@ -125,11 +115,11 @@
             background-color: #fff;
             border: 10px solid #ccc;
             cursor: crosshair;
+            height: auto;
+            min-height: 500px;
             text-align: center;
             padding: 20px;
             margin-bottom: 20px;
-            width: 100%;
-            box-sizing: border-box;
         }
         .drawing-area h1 {
             color: red;
@@ -137,29 +127,80 @@
         .drawing-area .subheading {
             font-size: 1em;
         }
-        @media (max-width: 600px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .navigation ul {
-                flex-direction: column;
-            }
-            .autoslide img {
-                height: auto;
-            }
-            .autoslide {
-                padding: 10px;
-            }
-            .autoslide .prev,
-            .autoslide .next {
-                padding: 5px;
-                font-size: 16px;
-            }
-            .drawing-area {
-                padding: 10px;
-                margin-bottom: 10px;
-            }
+        .ihp-breakdown__content-promo {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .ihp-breakdown__content-promo-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .ihp-breakdown__content-promo-cta .promo-cta {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .ihp-breakdown__content-promo-cta img {
+            max-width: 131px;
+            height: auto;
+        }
+        .util-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .util-button--alt-on-dark {
+            background-color: #555;
+        }
+        .ihp-breakdown__grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .ihp-breakdown__grid-intro {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .ihp-breakdown__grid-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .ihp-breakdown__grid-cards-item {
+            flex: 1;
+            min-width: 200px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .ihp-breakdown__grid-cards-item a {
+            text-decoration: none;
+            color: #333;
+        }
+        .ihp-breakdown__grid-cards-item .link-card-icon {
+            display: block;
+            margin: 0 auto;
+        }
+        .ihp-breakdown__grid-cards-item h4 {
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -215,7 +256,7 @@
 				<picture>
 					<source srcset="https://maserwan.github.io/RakanPKDTL/Logo/Teambuilding.jpg" media="(min-width: 1000px)" type="image/png" width="131" height="74">
 					<source srcset="https://maserwan.github.io/RakanPKDTL/Logo/Teambuilding.jpg" media="(max-width: 1000px)" type="image/png" width="99" height="56">
-					<img src="https://maserwan.github.io/RakanPKDTL/Logo/eambuilding.jpg" decoding="async" loading="lazy" width="131" height="74" alt="Developer Zone Logo">
+					<img src="https://maserwan.github.io/RakanPKDTL/Logo/Teambuilding.jpg" decoding="async" loading="lazy" width="131" height="74" alt="Developer Zone Logo">
 				</picture>
 				<div class="util-button util-button--alt-on-dark" aria-label="Join Google Sheets">Join</div>
 				</a>
@@ -311,7 +352,11 @@
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
-                slide.style.display = i === index ? 'block' : 'none';
+                if (i === index) {
+                    slide.style.display = 'block';
+                } else {
+                    slide.style.display = 'none';
+                }
             });
         }
 
