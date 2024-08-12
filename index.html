@@ -59,18 +59,33 @@
         <label for="search-box" class="fas fa-search"></label>
       </form>
 
-      <form action="" class="login-form">
-        <h3>login form</h3>
-        <input type="email" placeholder="enter your email" class="box" />
-        <input type="password" placeholder="enter your password" class="box" />
+    <form action="javascript:void(0);" class="login-form" onsubmit="validateLogin()">
+        <h3>Login Form</h3>
+        <input type="text" id="username" placeholder="Enter your username" class="box" required />
+        <input type="password" id="password" placeholder="Enter your password" class="box" required />
         <div class="flex">
-          <input type="checkbox" name="" id="remember-me" />
-          <label for="remember-me">remember me</label>
-          <a href="#">forgot password?</a>
+            <input type="checkbox" id="remember-me" />
+            <label for="remember-me">Remember me</label>
+            <a href="#">Forgot password?</a>
         </div>
-        <input type="submit" value="login now" class="btn" />
-        <p>don't have an account <a href="#">create one!</a></p>
-      </form>
+        <input type="submit" value="Login Now" class="btn" />
+        <p>Don't have an account? <a href="#">Create one!</a></p>
+    </form>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === "pkdtlsm" && password === "Sumber@2024") {
+                alert("Login successful!");
+                // Redirect to another page or perform other actions
+                window.location.href = "your-secured-page.html";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+    </script>
     </header>
 
     <div class="contact-info">
